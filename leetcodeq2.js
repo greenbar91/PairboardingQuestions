@@ -21,39 +21,39 @@
 // The answer we are looking for here is splitting it in half
 
 
-// function magicArray(array, start, end){
+function magicArray(array, start, end){
 
-//     if (end < start || start < 0 || end >= array.length)
-//         return -1;
+    if (end < start || start < 0 || end >= array.length)
+        return -1;
 
-//    const midpoint = Math.floor((start + end) / 2)
+   const midpoint = Math.floor((start + end) / 2)
 
-//    if (midpoint == array[midpoint]){
-//     return midpoint
-//    }
+   if (midpoint == array[midpoint]){
+    return midpoint
+   }
 
-//    const leftSideEnd = Math.min(midpoint - 1, array[midpoint])
-//    const leftSideRecursion = magicArray(array, start, leftSideEnd)
+   const leftSideEnd = Math.min(midpoint - 1, array[midpoint])
+   const leftSideRecursion = magicArray(array, start, leftSideEnd)
 
-//    if (leftSideRecursion >= 0){
-//         return leftSideEnd
-//    }
+   if (leftSideRecursion >= 0){
+        return leftSideEnd
+   }
 
-//    const rightSideStart = Math.max(midpoint + 1, array[midpoint])
-//    const rightSideRecursion = magicArray(array, rightSideStart, end )
+   const rightSideStart = Math.max(midpoint + 1, array[midpoint])
+   const rightSideRecursion = magicArray(array, rightSideStart, end )
 
-//    if(rightSideRecursion >= 0){
-//     return rightSideStart
-//    }
+   if(rightSideRecursion >= 0){
+    return rightSideStart
+   }
 
 
-//    return -1
+   return -1
 
-// }
+}
 
-// const array = [-4, -2, 2, 6, 6, 6, 6, 10]
+const array = [-4, -2, 2, 6, 6, 6, 6, 10]
 
-// console.log(magicArray(array, 0 , 7))
+console.log(magicArray(array, 0 , 7))
 
 
 function sortScores(unsortedScores, highestPossibleScore) {
