@@ -87,3 +87,20 @@ function sortScores(unsortedScores, highestPossibleScore) {
 
   const sortedScores = sortScores(unsortedScores, HIGHEST_POSSIBLE_SCORE);
   console.log(sortedScores);  // Expected output: [37, 41, 53, 65, 89, 91]
+
+
+  function isBalanced(string) {
+    let count = 0;
+
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] === '(') {
+        count += 1;
+      } else if (string[i] === ')') {
+        count -= 1;
+
+        if (count < 0) return false;
+      }
+    }
+
+    return !count;
+  }
