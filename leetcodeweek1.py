@@ -7,18 +7,18 @@
 # assume lowerbound a positive number
 
 def findMissingNumber(arrayOfIntegers, upperBound, lowerBound):
-    # result = sorted(arrayOfIntegers)
+    result = sorted(arrayOfIntegers)
 
-    # for num, index in result:
-    #     if num >= lowerBound and num <= upperBound:
-    #         if  not num[index] == num[index + 1]:
-    #             return num + 1
-    excepted_list = set(range(lowerBound, upperBound ))
-    print(excepted_list)
-    for num in arrayOfIntegers:
-        excepted_list.discard(num)
+    for num, index in result:
+        if num >= lowerBound and num <= upperBound:
+            if  not num[index] == num[index + 1]:
+                return num + 1
+    # excepted_list = set(range(lowerBound, upperBound ))
+    # print(excepted_list)
+    # for num in arrayOfIntegers:
+    #     excepted_list.discard(num)
 
-    return excepted_list
+    return result
 
 
 
