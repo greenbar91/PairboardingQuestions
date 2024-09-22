@@ -67,8 +67,42 @@ const maxProfit = function(arr){
 // int getMin() retrieves the minimum element in the stack.
 // You must implement a solution with O(1) time complexity for each function.
 
-const MinStack = function(){
+class MinStack {
+    constructor() {
+        this.stack = [];
+        this.minElement = Infinity;
+    }
 
+    push(val) {
+        if (this.stack.length === 0) {
+            this.minElement = val;
+        } else if (val < this.minElement) {
+            let temp = 2 * val - this.minElement;
+            this.stack.push(temp);
+            this.minElement = val;
+        } else {
+            this.stack.push(val);
+        }
+    }
+
+    pop() {
+        if (this.stack[this.stack.length - 1] < this.minElement) {
+            this.minElement = 2 * this.minElement - this.stack.pop();
+        } else {
+            this.stack.pop();
+        }
+    }
+
+    top() {
+        if (this.stack[this.stack.length - 1] < this.minElement) {
+            return this.minElement;
+        }
+        return this.stack[this.stack.length - 1];
+    }
+
+    getMin() {
+        return this.minElement;
+    }
 }
 
 
