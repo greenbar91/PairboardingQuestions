@@ -18,3 +18,21 @@ class Solution {
         return this.binary_search(0, nums.length - 1, nums, target);
     }
 }
+
+class Solution {
+    /**
+     * @param {number[][]} matrix
+     * @param {number} target
+     * @return {boolean}
+     */
+    searchMatrix(matrix, target) {
+        for (let r = 0; r < matrix.length; r++) {
+            for (let c = 0; c < matrix[r].length; c++) {
+                if (matrix[r][c] == target) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
