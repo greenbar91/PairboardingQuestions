@@ -134,3 +134,27 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    /**
+     * @param {TreeNode} root
+     * @return {number[]}
+     */
+    rightSideView(root) {
+        let res = [];
+
+        function dfs(node, depth) {
+            if (!node) return;
+
+            if (res.length === depth) {
+                res.push(node.val);
+            }
+
+            dfs(node.right, depth + 1);
+            dfs(node.left, depth + 1);
+        }
+
+        dfs(root, 0);
+        return res;
+    }
+}
